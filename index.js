@@ -15,6 +15,7 @@ function iniciar() {
     
     console.log("Conectando...");
     client.login(config);
+    console.log("Conectado!");
 }
 
 function carregarComandos() {
