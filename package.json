@@ -1,0 +1,22 @@
+{
+  "name": "dbot-discord",
+  "version": "0.0.1-SNAPSHOT",
+  "description": "BOT para Discord com diversas funções",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaviSMoura/dBot-Discord.git"
+  },
+  "author": "DaviDEV",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaviSMoura/dBot-Discord/issues"
+  },
+  "homepage": "https://github.com/DaviSMoura/dBot-Discord#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
