@@ -12,10 +12,6 @@ async function onMessage(client, message) {
         return;
     }
 
-    if (message.isMentioned(client.user)) {
-        message.reply('Oi! Use meus comandos com o prefixo "." !');
-    }
-
     if (!message.content.startsWith(".")) {
         return;
     }
@@ -26,21 +22,6 @@ async function onMessage(client, message) {
     const command = getCommand(client, cmd);
     if (command) {
         message.delete(1000).catch(err => {});
-
-        if (cooldown.has(message.author.id)) {
-            const timeSinceLastCommand = Date.now() - cooldown.get(message.author.id);
-            if (timeSinceLastCommand < 0) {
-                message
-                    .reply(`Aguarde ${((0 - timeSinceLastCommand) / 1000).toFixed(2)} segundos para executar um novo comando.`)
-                    .then(msg => msg.delete(5000));
-                return;
-            }
-        }
-
-        if (!message.member.roles.find(role => role.name === "Administrador" || role.name === "Moderador")) {
-            cooldown.set(message.author.id, Date.now());
-        }
-
         command.run(client, message, args, queue);
     }
 }

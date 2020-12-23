@@ -1,8 +1,7 @@
 const Discord = require("discord.js")
-const config = require("../config.json");
 
 exports.run = async (bot, message, args) => {
-    if(!args[0]) return message.channel.send("**Insira um texto para eu imitar.** `.say <texto>`");
+    if(!args[0]) return message.reply("**Insira um texto para eu imitar.**\n`.say <texto>`");
     const sayMessage = args.join(" ");
 
     message.delete().catch(O_o=>{});
